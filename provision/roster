@@ -1,3 +1,4 @@
 app: 
   host: 104.196.9.185
   user: jjmerelo
+  sudo: True
