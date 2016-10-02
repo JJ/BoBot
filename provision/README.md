@@ -14,6 +14,7 @@ quieres ejecutarlo sin necesidad de ser superusuario, hay que
 mkdir -p ~/etc/salt/pki/master
 mkdir -p ~/var/cache/salt/master
 mkdir -p ~/log/salt/
+mkdir -p ~/lib/salt/states
 ```
 
 3. Modificar el fichero de configuración en `~/lib/salt/master` y
@@ -25,3 +26,18 @@ cachedir: /home/jmerelo/var/cache/salt/master
 log_file: /home/jmerelo/log/salt/master
 ```
 
+4. Copiar o enlazar simbólicamente los ficheros de estos directorios
+
+```
+ ln -s ~/Asignaturas/cloud-computing/BoBot/provision/java/cli.sls
+ javasetup.sls
+```
+
+5. Crear un fichero `roster` como [este](roster)
+
+5. Ejecutar con
+
+
+```
+salt-ssh app state.apply javasetup --roster-file=./roster -c ~/lib/salt --force-color 
+```
