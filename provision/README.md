@@ -37,5 +37,8 @@ log_file: /home/jmerelo/log/salt/master
 
 5. Ejecutar con
 
-	salt-ssh app state.apply javasetup --roster-file=./roster -c ~/lib/salt --force-color 
+~~~
+salt-ssh app state.apply javasetup --roster-file=./roster -c ~/lib/salt --force-color 
+~~~
 
+con lo que se aplica el estado javasetup, definido en el fichero correspondiente.
