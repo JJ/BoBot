@@ -1,4 +1,4 @@
 app: 
-  host: 13.91.7.116
-  user: jmerelo
+  host: 127.0.0.1
+  user: foo
   sudo: True
