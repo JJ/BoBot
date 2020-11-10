@@ -1,6 +1,9 @@
 package info.jjmerelo.BoBot
 
-import info.mukel.telegrambot4s._, api._, methods._, models._, Implicits._
+import com.bot4s.telegram.{api, methods, models, Implicits}
+import com.bot4s.telegram.api.declarative.Commands
+import com.bot4s.telegram.clients.{FutureSttpClient, ScalajHttpClient}
+import com.bot4s.telegram.future.{Polling, TelegramBot}
 import com.typesafe.scalalogging.Logger
 import scala.util.parsing.json._
 
