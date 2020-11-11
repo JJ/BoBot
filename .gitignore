@@ -21,3 +21,6 @@ project/plugins/project/
 
 # Fichero roster
 mi.roster
+
+.bsp/
+*.properties
