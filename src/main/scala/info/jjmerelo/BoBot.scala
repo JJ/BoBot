@@ -12,17 +12,19 @@ import scala.util.Try
 import scala.concurrent.Future
 
 import com.typesafe.scalalogging.Logger
-import scala.util.parsing.json._
+
 
 object BoBot extends TelegramBot
     with Polling
     with Commands[Future] {
 
-  val log = Logger("BoBot")
+  implicit val backend = SttpBackends.default
   def token = sys.env("BOBOT_TOKEN")
-  val lines = scala.io.Source.fromFile("hitos.json").mkString
-  val hitos = JSON.parseFull( lines )
-  val solo_hitos = hitos.getOrElse( hitos )
+  override val client: RequestHandler[Future] = new FutureSttpClient(token)
+  val log = Logger("BoBot")
+//  val lines = scala.io.Source.fromFile("hitos.json").mkString
+//  val hitos = JSON.parseFull( lines )
+//  val solo_hitos = hitos.getOrElse( hitos )
 
   onCommand("hey") { implicit msg =>
     log.info("Hello")
