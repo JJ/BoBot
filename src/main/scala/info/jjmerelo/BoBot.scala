@@ -19,7 +19,7 @@ object BoBot extends TelegramBot
     with Commands[Future] {
 
   implicit val backend = SttpBackends.default
-  def token = sys.env("BOBOT_TOKEN")
+  val token: String = sys.env("BOBOT_TOKEN")
   override val client: RequestHandler[Future] = new FutureSttpClient(token)
   val log = Logger("BoBot")
 //  val lines = scala.io.Source.fromFile("hitos.json").mkString
